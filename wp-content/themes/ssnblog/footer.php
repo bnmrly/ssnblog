@@ -22,11 +22,13 @@
 
 <h3>Follow us</h3>
 
-	<a href="https://www.facebook.com/streetsupport">
-		<img class="facebook_icon" src="http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png" height="20px" width="20px"></img>
+	<a class="facebook-follow" href="https://www.facebook.com/streetsupport">
+
 	</a>
-	<a href="https://twitter.com/streetsupportuk">
-		<img class="twitter_icon" src="http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Twitter-alt-2-Metro-icon.png" height="20px" width="20px"></img></a>
+
+	<a class="twitter-follow" href="https://twitter.com/streetsupportuk">
+
+	</a>
 	</p>
 <p class="footer__copy">&copy; 2016 Street Support Network</p>
 	</div><!-- .container-->
