@@ -1,5 +1,13 @@
 body {
-    font-size: 1rem;
-		font-weight: 300;
-		margin: 0;
+  font-size: 1rem;
+	font-weight: 300;
+	margin: 0;
+}
+
+.entry-title {
+	font-weight: 500;
+}
+
+.entry-title > a {
+	color: #8d8d8d;
 }

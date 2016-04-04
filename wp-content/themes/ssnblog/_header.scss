@@ -1,5 +1,19 @@
 #masthead {
-background-color: #00c08e;
+  background-color: #00c08e;
+}
+
+#logo {
+  width:2.5em;
+  height:2.5em;
+  position: absolute;
+  left: 0.5em;
+  top: 0.25em;
+}
+
+.header__title {
+  position: relative;
+  margin-left: 2.8em;
+  padding-bottom: 0.8em;
 }
 
 span.text {
