@@ -7,7 +7,7 @@
 	padding-left: 0.5em;
 	margin-top: -5em;
 	margin-bottom: 3em;
-	text-align: right;
+	float: right !important;
 	font-size: 0.75em;
 }
 
@@ -18,6 +18,7 @@ time.entry-date.published {
 a.url.fn.n {
 	color: #00e6a8;
 }
+
 
 a.more-link, .cat-links > a {
 	color: #00e6a8;

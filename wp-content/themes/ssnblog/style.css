@@ -863,6 +863,32 @@ hr {
   height: 0.5em;
   width: 100%; }
 
+.info-container {
+  padding-top: 2em; }
+
+.entry-meta {
+  padding-top: 1em;
+  padding-left: 0.5em;
+  margin-top: -5em;
+  margin-bottom: 3em;
+  float: right !important;
+  font-size: 0.75em; }
+
+time.entry-date.published {
+  color: #00e6a8; }
+
+a.url.fn.n {
+  color: #00e6a8; }
+
+a.more-link, .cat-links > a {
+  color: #00e6a8; }
+
+.entry-content > p > a {
+  color: #00e6a8; }
+
+a.more-link {
+  font-size: 0.8em; }
+
 .nav-links {
   font-size: 0.9em; }
 
@@ -884,7 +910,8 @@ hr {
   font-size: 0.8em;
   margin-bottom: -10px;
   text-align: center;
-  padding-left: -3em !important; }
+  padding-left: -3em !important;
+  margin-top: -0.6em; }
 
 /* Is this doing anything below? */
 .entry-footer {
@@ -909,5 +936,9 @@ hr {
 
 .footer__social-list {
   text-align: center; }
+
+.social-follow {
+  margin-top: 0em;
+  padding-top: 0.6em; }
 
 /*# sourceMappingURL=style.css.map */
