@@ -889,6 +889,10 @@ a.more-link, .cat-links > a {
 a.more-link {
   font-size: 0.8em; }
 
+.post-navigation {
+  margin-top: -0.9em;
+  margin-bottom: -0.9em; }
+
 .nav-links {
   font-size: 0.8em; }
 
