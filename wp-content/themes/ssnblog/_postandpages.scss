@@ -1,6 +1,6 @@
 /* Does this do anything? Was it a div I created as a test and forgot to delete after?
 #main_body_content {
-	background-color:#8d8d8d;
+	background-color:$brand-f;
 	padding-top: 0.5em;
 }
 */
@@ -19,7 +19,7 @@
 }
 
 .entry-title > a {
-	color: #8d8d8d;
+	color: $brand-f;
 }
 
 .edit-link {

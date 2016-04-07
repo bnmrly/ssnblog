@@ -780,6 +780,14 @@ object {
 .gallery-caption {
   display: block; }
 
+/* unused so far:
+
+$brand-e: #ffde00;
+$brand-g: #a90000;
+$brand-h: #6e6895;
+$brand-i: #f6e9d2;
+
+*/
 body {
   font-size: 1rem;
   font-weight: 300;
@@ -792,7 +800,7 @@ body {
   color: #8d8d8d; }
 
 #masthead {
-  background-color: #00c08e; }
+  background-color: #00C08E; }
 
 #logo {
   width: 2.5em;
@@ -834,7 +842,7 @@ span.text {
 
 /* Does this do anything? Was it a div I created as a test and forgot to delete after?
 #main_body_content {
-	background-color:#8d8d8d;
+	background-color:$brand-f;
 	padding-top: 0.5em;
 }
 */
@@ -875,16 +883,16 @@ hr {
   font-size: 0.75em; }
 
 time.entry-date.published {
-  color: #00e6a8; }
+  color: #00E6A8; }
 
 a.url.fn.n {
-  color: #00e6a8; }
+  color: #00E6A8; }
 
 a.more-link, .cat-links > a {
-  color: #00e6a8; }
+  color: #00E6A8; }
 
 .entry-content > p > a {
-  color: #00e6a8; }
+  color: #00E6A8; }
 
 a.more-link {
   font-size: 0.8em; }
@@ -897,10 +905,10 @@ a.more-link {
   font-size: 0.8em; }
 
 .nav-previous > a, .nav-next > a {
-  color: #00e6a8; }
+  color: #00E6A8; }
 
 #colophon {
-  background-color: #00805d;
+  background-color: #00805D;
   color: #fff;
   padding-top: 0px;
   padding-bottom: 0px;
