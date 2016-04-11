@@ -817,6 +817,13 @@ body {
 span.text {
   color: white; }
 
+.main-navigation a {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.5em;
+  color: #000000; }
+
 /*Style for this is currently in index.php:
 
 <div id="primary" class="content-area">
