@@ -799,6 +799,9 @@ body {
 .entry-title > a {
   color: #8d8d8d; }
 
+h2, h3, p, ul {
+  line-height: 1.4; }
+
 #masthead {
   background-color: #00C08E; }
 
