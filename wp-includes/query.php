@@ -3887,6 +3887,7 @@ class WP_Query {
 			do_action_ref_array( 'loop_start', array( &$this ) );
 
 		$post = $this->next_post();
+
 		$this->setup_postdata( $post );
 	}
 
