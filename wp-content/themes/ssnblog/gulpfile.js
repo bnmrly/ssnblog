@@ -20,6 +20,6 @@ gulp.task('watch', ['browserSync', 'sass'], function (){
 
 gulp.task('browserSync', function() {
   browserSync.init({
-    proxy: "localhost/ssnblog"
+    proxy: "localhost/ssnblog/home"
   });
 });
