@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?> -->
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -27,19 +27,17 @@
 		?>
 	</div><!-- .entry-content -->
 
- <footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'ssnblog' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-
-				// BM ATTEMPTED CHANGE to remove edit link from page
-				//'<span class="edit-link">',
-				//'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	<footer class="entry-footer">
+ 		<?php
+ 			edit_post_link(
+ 				sprintf(
+ 					/* translators: %s: Name of current post */
+ 					esc_html__( 'Edit %s', '_s' ),
+ 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+ 				),
+ 				'<span class="edit-link">',
+ 				'</span>'
+ 			);
+ 		?>
+ 	</footer><!-- .entry-footer -->
+ </article><!-- #post-## -->
