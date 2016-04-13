@@ -27,9 +27,18 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<div>
-		this is the front page template
+	<div id="latest-3-news-posts">
+		latest 3 'news' posts
 	</div>
+
+	<div id="latest-3-stories-posts">
+		latest 3 'stories' posts
+	</div>
+
+	<div id="latest-3-about-homelessness-posts">
+		latest 3 'about homelessness' posts
+	</div>
+
 
 <?php
 get_sidebar();
