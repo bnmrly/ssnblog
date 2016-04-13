@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: homepage
+Template Name: front-page
 */
 ?>
 
@@ -28,7 +28,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	<div>
-		hello world
+		this is the front page template
 	</div>
 
 <?php
