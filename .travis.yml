@@ -1,0 +1,9 @@
+git:
+  depth: 1
+language: php
+cache:
+  directories:
+before_script:
+script: "./deploy.sh"
+env:
+  global:
