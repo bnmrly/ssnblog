@@ -41,7 +41,7 @@
 <header id="masthead" class="site-header" role="banner">
 	<img src="http://localhost/ssnblog/wp-content/uploads/2016/03/apple-touch-icon.png" id="logo" alt="apple-touch-icon">
 
-<h1 class="h3 header__title"><a href="http://localhost/ssnblog/"><span class="icon icon-logo"></span> <span class="text">Street Support</span></a></h1>
+<h1 class="h3 header__title"><a href="http://localhost/ssnblog/home/"><span class="icon icon-logo"></span> <span class="text">Street Support Blog</span></a></h1>
 
 
 		<!-- BM CHANGE Added some of the html from header.hbs-->
