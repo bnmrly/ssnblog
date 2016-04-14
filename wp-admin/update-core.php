@@ -7,6 +7,10 @@
  */
 
 /** WordPress Administration Bootstrap */
+
+/**Added to test out maximum 30 second time out error from: http://masterblogster.com/how-to-fix-maximum-execution-time-of-30-seconds-exceeded-error-while-updating-wordpress-in-localhost/ */
+
+ini_set('max_execution_time', 300);
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 wp_enqueue_style( 'plugin-install' );
