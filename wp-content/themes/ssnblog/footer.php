@@ -15,24 +15,25 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
-		<!-- BM CHANGE Remove Wordpress and theme links and replace with .container-->
-		<div class="container">
+		<!-- BM CHANGE Remove Wordpress and theme links and replace with .container-footer-->
 
-<p class="social-follow"
+		<div class="container-footer">
 
-<h3>Follow us</h3>
+			<h3 class="h3 footer__header">Follow Street Support Network</h3>
 
-	<a class="facebook-follow" href="https://www.facebook.com/streetsupport">
+			<ul class="footer__social-list">
 
-	</a>
+				<li class="footer__social-item"><a class="facebook-follow" href="https://www.facebook.com/streetsupport"></a></li>
 
-	<a class="twitter-follow" href="https://twitter.com/streetsupportuk">
+				<li class="footer__social-item"><a class="twitter-follow" href="https://twitter.com/streetsupportuk"></a></li>
 
-	</a>
-	</p>
-<p class="footer__copy">&copy; 2016 Street Support Network</p>
-	</div><!-- .container-->
-	</footer><!-- #colophon -->
+			</ul><p class="footer__copy">© 2016 Street Support Network</p>
+
+		</div><!-- .container-footer
+</footer> #colophon-->
+
+
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -1,28 +1,40 @@
 #colophon {
 	background-color: $brand-c;
 	color: #fff;
-	padding-top: 0px;
-	padding-bottom: 0px;
 	text-align: center;
-	margin-bottom: 0 !important;
+}
+
+.container-footer {
+	padding-top:2em;
+
 }
 
 .site-footer {
-	height: 5em;
+	height: 8em;
 }
 
 .footer__copy {
 	font-size: 0.8em;
-	margin-bottom: -10px;
-	text-align: center;
-	padding-left: -3em !important;
-	margin-top: -0.6em;
+	margin-top: 1em;
 }
 
-/* Is this doing anything below? */
+.footer__header {
+	display:inline-block;
+}
 
-.entry-footer {
+.footer__social-list {
+	display: inline-block;
+}
+
+
+
+
+/* was this doing anything below?
+
+entry-footer {
 	padding-top: 0.6em;
 	padding-bottom: 0.6em;
 	background-color: $brand-d;
 }
+
+*/
