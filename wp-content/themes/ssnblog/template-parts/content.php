@@ -41,20 +41,28 @@
 	<?php
 	if ( 'post' === get_post_type() ) : ?>
 
-<div class ="info-container">	
+<div class ="info-container">
 
 	<div class="entry-meta">
 			<?php ssnblog_entry_footer(); ?>
 		<?php ssnblog_posted_on(); ?>
 	</div><!-- .entry-meta -->
 
+<!-- previous code with facebook icon too small
+<div class="social-share">
+<span class="social-share__text">Share this post: </span>
+<a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="streetsupportuk" data-dnt="true"></a>
+	<a href="https://developers.facebook.com/docs/plugins/" class="fb-share-button"{count} data-via="streetsupportuk" data-dnt="true"></a>
+</div>
+</div>
 
-		<div class="social-share">
-		<span class="social-share__text">Share this post: </span>
-		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="streetsupportuk" data-dnt="true">TWT BTN</a>
-			<a href="https://developers.facebook.com/docs/plugins/" class="fb-share-button"{count} data-via="streetsupportuk" data-dnt="true">FB BTN</a>
-	</div>
-	</div>
+-->
+
+	<div class="social-share">
+  <span class="social-share__text">Share this page: </span>
+  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="streetsupportuk" data-dnt="true"></a>
+  <div class="fb-share-button" data-layout="button"></div>
+</div>
 
 
 	<div id="hr-post-divider">
