@@ -30,7 +30,7 @@ get_header(); ?>
 		?>
 	</div>
 
-	<div id="latest-about-homelessness-posts"c lass="container-post-excerpt">
+	<div id="latest-about-homelessness-posts" class="container-post-excerpt">
 		<?php query_posts('category_name=about-homelessness&showposts=1');
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content-front-page-catexcerpt', 'page' );

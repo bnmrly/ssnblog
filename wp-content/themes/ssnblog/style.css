@@ -870,6 +870,18 @@ span.text {
   background-color: #8d8d8d;
   font-weight: normal; }
 
+.container-cat-titles {
+  border-style: solid;
+  border-width: thick;
+  border-color: #ffa200;
+  margin-bottom: 5em; }
+
+.container-post-excerpt {
+  border-style: solid;
+  border-width: thick;
+  border-color: #ffa200;
+  margin-bottom: 5em; }
+
 /* Does this do anything? Was it a div I created as a test and forgot to delete after?
 #main_body_content {
 	background-color:$brand-f;
