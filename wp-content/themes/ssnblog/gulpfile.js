@@ -5,7 +5,7 @@ var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function() {
   return gulp.src('sass/style.scss') // Gets all files ending with .scss in app/scss
-    .pipe(sass).on('error', sass.logError)
+    .pipe(sass())
     .pipe(gulp.dest('.'))
     .pipe(browserSync.reload({
       stream: true
