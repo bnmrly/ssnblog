@@ -1003,3 +1003,7 @@ entry-footer {
   height: 37px;
   width: 34px;
   vertical-align: middle; }
+
+.social-share > iframe {
+  vertical-align: bottom;
+  margin-right: 5px; }
