@@ -11,11 +11,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+
+
+
+
+
 			<!-- Attempts with Clair to get correct functionality working
 
 <div id="latest-3-news-posts">
 	latest 3 'news' posts
-<?php //query_posts('category_name=news&showposts=3');
+<?php query_posts('category_name=news&showposts=3');
 	//if ( have_posts() ) {
 		//while ( have_posts() ) :
 			  //the_title(); the_permalink();
@@ -29,14 +34,12 @@ get_header(); ?>
     // Loop output goes here
 // endwhile; endif;
 	?>
-</div>
-
--->
+</div> -->
 
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				get_template_part( 'template-parts/content-front-page', 'page' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
