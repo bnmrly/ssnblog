@@ -15,6 +15,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	<div id="latest-news-posts" class="container-cat-titles">
+		<h1>Latest news</h1>
 		<?php query_posts('category_name=news&showposts=3');
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content-front-page-news', 'page' );
@@ -23,6 +24,7 @@ get_header(); ?>
 	</div>
 
 	<div id="latest-stories-posts" class="container-post-excerpt">
+	<h1>Latest stories</h1>
 		<?php query_posts('category_name=stories&showposts=1');
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content-front-page-catexcerpt', 'page' );
@@ -31,6 +33,7 @@ get_header(); ?>
 	</div>
 
 	<div id="latest-about-homelessness-posts" class="container-post-excerpt">
+		<h1>About Homelessness</h1>
 		<?php query_posts('category_name=about-homelessness&showposts=1');
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content-front-page-catexcerpt', 'page' );
