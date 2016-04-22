@@ -2,6 +2,19 @@
   background-color:$brand-a;
 }
 
+.site-header {
+  text-align: center !important;
+}
+
+.main-navigation {
+  background-color: $brand-j;
+}
+
+#site-navigation {
+text-align: center !important;
+
+}
+
 #logo {
   width:38px;
   height:38px;
@@ -11,34 +24,17 @@
   margin-top: 0.4em;
 }
 
-/* Test Comment for commit */
+/*
 
-
-/* Copied in from Main site but not working
-.container_header {
-max-width: 50rem;
-margin-left: auto;
-margin-right: auto;
-padding-top: 0px;
-    padding-right: 1rem;
-    padding-bottom: 0px;
-    padding-left: 1rem;
-}
-
-also tried logo
-
- */
-
-/* can;t get font-weight working below */
+*/
 
 .header__title {
   display: inline-block;
   vertical-align:top;
-  padding-top:0.7em;
-  margin-left: 0.25em;
   font-size: 1em;
   font-weight:lighter !important;
 }
+
 
 span.text {
 	color: white;
@@ -49,5 +45,5 @@ span.text {
   padding-right: 1em;
   padding-top: 0.1em;
   padding-bottom: 0.5em;
-  color: $brand-j;
+  color: $brand-k;
 }

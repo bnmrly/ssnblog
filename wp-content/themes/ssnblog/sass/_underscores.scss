@@ -565,15 +565,18 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
 .main-navigation {
+	display: inline-block;
 	clear: both;
-	display: block;
 	float: left;
 	width: 100%;
 }
 
+/* BM CHANGE I used display: inline-block for everything here to try and get it working */
+
 .main-navigation ul {
-	display: none;
+	display: inline-block;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -585,11 +588,12 @@ a:active {
 }
 
 .main-navigation a {
-	display: block;
+		display: inline-block;
 	text-decoration: none;
 }
 
 .main-navigation ul ul {
+	display: inline-block;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
@@ -600,15 +604,17 @@ a:active {
 
 .main-navigation ul ul ul {
 	left: -999em;
+	display: inline-block;
 	top: 0;
 }
 
 .main-navigation ul ul a {
 	width: 200px;
+	display: inline-block;
 }
 
 .main-navigation ul ul li {
-
+display: inline-block;
 }
 
 .main-navigation li:hover > a,
@@ -647,10 +653,10 @@ a:active {
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
-		display: none;
+		display: inline-block;
 	}
 	.main-navigation ul {
-		display: block;
+		display: inline-block;
 	}
 }
 
