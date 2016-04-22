@@ -493,6 +493,7 @@ a:active {
 /* BM CHANGE I used display: inline-block for everything here to try and get it working */
 .main-navigation ul {
   display: inline-block;
+  vertical-align: middle;
   list-style: none;
   margin: 0;
   padding-left: 0; }
@@ -805,10 +806,12 @@ h2, h3, p, ul {
   background-color: #00C08E; }
 
 .site-header {
-  text-align: center !important; }
+  text-align: center !important;
+  padding-top: 0.5em; }
 
 .main-navigation {
-  background-color: #e1c116; }
+  background-color: #e1c116;
+  padding-top: 0.4em; }
 
 #site-navigation {
   text-align: center !important; }
@@ -839,6 +842,9 @@ span.text {
   padding-top: 0.1em;
   padding-bottom: 0.5em;
   color: #48484a; }
+
+#container_header {
+  line-height: 2.1875rem; }
 
 /*Style for this is currently in index.php:
 

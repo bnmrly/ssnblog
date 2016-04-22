@@ -4,10 +4,12 @@
 
 .site-header {
   text-align: center !important;
+  padding-top:0.5em;
 }
 
 .main-navigation {
   background-color: $brand-j;
+  padding-top:0.4em;
 }
 
 #site-navigation {
@@ -46,4 +48,8 @@ span.text {
   padding-top: 0.1em;
   padding-bottom: 0.5em;
   color: $brand-k;
+}
+
+#container_header {
+  line-height: 2.1875rem;
 }
