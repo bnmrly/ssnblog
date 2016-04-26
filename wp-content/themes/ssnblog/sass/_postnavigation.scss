@@ -10,3 +10,7 @@
 .nav-previous > a, .nav-next > a {
   color: $brand-b;
 }
+
+.menu > .li > a {
+  transition: background-color .15s linear;
+}
