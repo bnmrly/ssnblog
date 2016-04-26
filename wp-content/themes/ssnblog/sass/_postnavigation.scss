@@ -3,6 +3,11 @@
   margin-bottom: -0.9em;
 }
 
+.main-navigation {
+border-top: 2px solid #f6e9d2;
+}
+
+
 .nav-links {
   font-size:0.8em;
 }
@@ -13,4 +18,13 @@
 
 .menu > .li > a {
   transition: background-color .15s linear;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu > .li > a:hover {
+background-color: $brand-i;
+}
+
+.current_page_item {
+  background-color: $brand-i;
 }
