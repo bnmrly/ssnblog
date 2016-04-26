@@ -983,7 +983,7 @@ a.more-link {
   background-color: #f6e9d2; }
 
 #colophon {
-  background-color: #00805D;
+  background: linear-gradient(#29272a, #101011);
   color: #fff;
   text-align: center; }
 
