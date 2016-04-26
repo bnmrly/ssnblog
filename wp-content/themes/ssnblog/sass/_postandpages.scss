@@ -5,7 +5,7 @@
 }
 */
 
-.page-title, .entry-content, .entry-header, .entry-meta, .social-share, .nav-previous, .nav-next {
+.page-title, .entry-content, .entry-meta, .social-share, .nav-previous, .nav-next {
 	padding-left: 1em !important;
 	padding-right: 1em !important;
 }
@@ -20,6 +20,10 @@
 
 .entry-title > a {
 	color: $brand-f;
+}
+
+article > .entry-header {
+	padding-left:1em;
 }
 
 .edit-link {

@@ -873,7 +873,8 @@ span.text {
   border-style: solid;
   border-width: thick;
   border-color: #ffa200;
-  margin-bottom: 5em; }
+  margin-bottom: 5em;
+  padding-left: 1em; }
 
 .container-cat-titles .entry-header {
   margin-bottom: 1em; }
@@ -882,7 +883,14 @@ span.text {
   border-style: solid;
   border-width: thick;
   border-color: #ffa200;
-  margin-bottom: 5em; }
+  margin-bottom: 5em;
+  padding-left: 1em; }
+
+.cat-excerpt-entry-header {
+  margin-left: -1em; }
+
+.news-latest-entry-header {
+  margin-left: -1em; }
 
 /* Does this do anything? Was it a div I created as a test and forgot to delete after?
 #main_body_content {
@@ -890,7 +898,7 @@ span.text {
 	padding-top: 0.5em;
 }
 */
-.page-title, .entry-content, .entry-header, .entry-meta, .social-share, .nav-previous, .nav-next {
+.page-title, .entry-content, .entry-meta, .social-share, .nav-previous, .nav-next {
   padding-left: 1em !important;
   padding-right: 1em !important; }
 
@@ -902,6 +910,9 @@ span.text {
 
 .entry-title > a {
   color: #8d8d8d; }
+
+article > .entry-header {
+  padding-left: 1em; }
 
 .edit-link {
   display: none; }

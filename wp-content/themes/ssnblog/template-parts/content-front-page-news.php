@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header news-latest-entry-header">
 		<?php
 			if ( is_single() ) {
 				the_title( '<h3 class="entry-title">', '</h3>' );

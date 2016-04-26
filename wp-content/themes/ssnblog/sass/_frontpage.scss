@@ -3,6 +3,7 @@
   border-width: thick;
   border-color: $brand-d;
   margin-bottom: 5em;
+  padding-left: 1em;
 }
 
 .container-cat-titles .entry-header {
@@ -15,4 +16,13 @@
   border-width: thick;
   border-color: $brand-d;
   margin-bottom: 5em;
+  padding-left: 1em;
+}
+
+.cat-excerpt-entry-header {
+  margin-left: -1em;
+}
+
+.news-latest-entry-header {
+  margin-left: -1em;
 }
