@@ -861,14 +861,15 @@ span.text {
 */
 .page-header {
   background-color: #4e4269;
-  height: 1em;
-  padding-top: 0.2em;
-  padding-bottom: 2.2em; }
+  height: 1em; }
 
 .page-title {
   background-color: #4e4269;
-  font-weight: normal;
-  color: white; }
+  font-weight: 100;
+  color: white;
+  margin-top: auto;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
 
 .container-cat-titles {
   border-style: solid;
@@ -966,6 +967,7 @@ a.more-link {
 
 .main-navigation {
   border-top: 2px solid #f6e9d2;
+  border-bottom: 2px solid #f6e9d2;
   padding-top: 0em; }
 
 .nav-links {
@@ -976,8 +978,12 @@ a.more-link {
 
 #primary-menu > li {
   padding-right: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 0.3em;
+  padding-top: 0.3em;
   padding-left: 30px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #48484a !important;
   transition-property: background-color;
   transition-duration: 0.15s;
   transition-timing-function: linear;
