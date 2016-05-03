@@ -76,7 +76,6 @@
 </div> <!-- #container-header -->
 
   <div class="image-banner-container">
-    <h1 class="h1 block__header">BANNER IMAGE HERE</h1>
   </div>
 
 
