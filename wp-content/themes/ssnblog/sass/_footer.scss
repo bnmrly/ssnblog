@@ -5,17 +5,19 @@
 }
 
 .container-footer {
-	padding-top:2em;
-
+	padding-top:3em;
+	padding-top: 0em;
+  margin-top: 1em;
 }
 
 .site-footer {
-	height: 8em;
+	height: 10em;
 }
 
 .footer__copy {
 	font-size: 0.8em;
 	margin-top: 1em;
+	padding-bottom:1em !important;
 }
 
 .footer__header {
@@ -23,7 +25,7 @@
 }
 
 .footer__social-list {
-	display: inline-block;
+	display: block;
 }
 
 
