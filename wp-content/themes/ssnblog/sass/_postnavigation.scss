@@ -5,6 +5,7 @@
 
 .main-navigation {
 border-top: 2px solid $brand-i;
+padding-top: 0em;
 }
 
 
@@ -16,9 +17,15 @@ border-top: 2px solid $brand-i;
   color: $brand-b;
 }
 
-.menu > .li > a {
-  transition: background-color .15s linear;
-  -webkit-overflow-scrolling: touch;
+#primary-menu > li {
+  padding-right: 30px;
+      padding-bottom: 10px;
+      padding-left: 30px;
+      transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    transition-delay: initial;
+
 }
 
 .menu > .li > a:hover {
@@ -26,5 +33,5 @@ background-color: $brand-i;
 }
 
 .current_page_item {
-  background-color: $brand-i;
+  background-color: white !important;;
 }
