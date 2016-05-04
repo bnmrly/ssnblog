@@ -1,13 +1,22 @@
 .page-header {
   background-color:#4e4269;
   height: 1em;
+    color: $brand-e;
 }
 
 .page-title {
 	background-color:#4e4269;
 	font-weight:100;
-  color: white;
   margin-top: auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+}
+
+
+.page-title > a {
+  color: $brand-e;
+}
+
+.page-header > a {
+color: white !important;
 }
