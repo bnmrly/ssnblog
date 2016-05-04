@@ -803,7 +803,7 @@ h2, h3, p, ul {
   line-height: 1.4; }
 
 #masthead {
-  background-color: #00C08E; }
+  background-color: #38ae8e; }
 
 .site-header {
   text-align: center !important;
@@ -944,16 +944,16 @@ img.wp-image-25.alignright {
   font-size: 0.75em; }
 
 time.entry-date.published {
-  color: #00E6A8; }
+  color: #0b9b75; }
 
 a.url.fn.n {
-  color: #00E6A8; }
+  color: #0b9b75; }
 
 a.more-link, .cat-links > a {
-  color: #00E6A8; }
+  color: #0b9b75; }
 
 .entry-content > p > a {
-  color: #00E6A8; }
+  color: #0b9b75; }
 
 a.more-link {
   font-size: 0.8em; }
@@ -971,7 +971,7 @@ a.more-link {
   font-size: 0.8em; }
 
 .nav-previous > a, .nav-next > a {
-  color: #00E6A8; }
+  color: #0b9b75; }
 
 #primary-menu {
   line-height: 1.7em; }
@@ -998,6 +998,7 @@ a.more-link {
   width: 100%;
   height: 30px;
   text-align: center;
+  padding-top: 1.5em;
   padding-left: 1em !important;
   padding-right: 1em !important; }
   .divider__line {
