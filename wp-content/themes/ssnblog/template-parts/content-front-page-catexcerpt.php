@@ -24,9 +24,9 @@
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Read more %s <span class="meta-nav">&rarr;</span>', 'ssnblog' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-
+			) );		
 		?>
+
+
 	</header><!-- .entry-header -->
 </article>
