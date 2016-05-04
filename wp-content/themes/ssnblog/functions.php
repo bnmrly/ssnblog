@@ -156,17 +156,19 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 // BM CHANGE TO REMOVE 'CATEGORY' FROM page-title
 
+		$title = '<a href="' . get_site_url() . '">Home</a> &gt; ';
+
     if ( is_category() ) {
 
-            $title = single_cat_title( '', false );
+            $title .= single_cat_title( '', false );
 
         } elseif ( is_tag() ) {
 
-            $title = single_tag_title( '', false );
+            $title .= single_tag_title( '', false );
 
         } elseif ( is_author() ) {
 
-            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+            $title .= '<span class="vcard">' . get_the_author() . '</span>' ;
 
         }
 
