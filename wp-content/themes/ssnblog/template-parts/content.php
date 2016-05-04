@@ -27,7 +27,7 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'More %s <span class="meta-nav">&rarr;</span>', 'ssnblog' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Read more %s <span class="meta-nav">&rarr;</span>', 'ssnblog' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
@@ -68,7 +68,7 @@
 	<div id="post-divider">
 <span class="divider"><span class="divider__line"></span>
 <span class="divider__background">
-	<svg class="svg-logo-dims divider__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#logo"></use></svg></span></span>
+	<img src="<?php echo get_site_url ();  ?>/wp-content/themes/ssnblog/images/site_icon.svg" id="logo" alt="street support logo"></span></span>
 	</div>
 	<?php
 	endif; ?>

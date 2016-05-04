@@ -15,7 +15,17 @@
 		<?php
 				the_title( '<h3 class="entry-title cat-excerpt-entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 				the_post_thumbnail( 'thumbnail');
-				the_excerpt();
+
+// BM CHANGE Removed the_excerpt function
+
+				//BM CHANGE ADDED to get read more working
+
+				the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Read more %s <span class="meta-nav">&rarr;</span>', 'ssnblog' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
+
 
 		?>
 	</header><!-- .entry-header -->
