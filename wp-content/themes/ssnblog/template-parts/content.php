@@ -65,8 +65,10 @@
 </div>
 
 
-	<div id="hr-post-divider">
-		<hr />
+	<div id="post-divider">
+<span class="divider"><span class="divider__line"></span>
+<span class="divider__background">
+	<svg class="svg-logo-dims divider__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#logo"></use></svg></span></span>
 	</div>
 	<?php
 	endif; ?>
