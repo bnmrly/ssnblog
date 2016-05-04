@@ -17,23 +17,24 @@ padding-top: 0em;
 .nav-previous > a, .nav-next > a {
   color: $brand-b;
 }
-
-#primary-menu > li {
-  padding-right: 30px;
-      padding-bottom: 0.3em;
-      padding-top:0.3em;
-      padding-left: 30px;
-      font-weight:300;
-      line-height: 1.5;
-      color: $brand-k !important;
-      transition-property: background-color;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    transition-delay: initial;
-
+#primary-menu {
+  line-height:1.7em;
 }
 
-.menu > .li > a:hover {
+#primary-menu > li {
+  font-weight:300;
+  color: $brand-k !important;
+  transition-property: background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: initial;
+}
+
+#primary-menu > li > a {
+  padding: 0.3em 30px;
+}
+
+#primary-menu > li > a:hover {
 background-color: $brand-i;
 }
 

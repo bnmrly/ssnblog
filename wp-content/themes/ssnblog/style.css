@@ -809,6 +809,10 @@ h2, h3, p, ul {
   text-align: center !important;
   padding-top: 0.5em; }
 
+.site-header > a {
+  padding: 2em 0;
+  display: block; }
+
 .main-navigation {
   background-color: #e1c116;
   padding-top: 0.4em; }
@@ -830,10 +834,8 @@ h2, h3, p, ul {
 .header__title {
   display: inline-block;
   vertical-align: top;
-  font-size: 1em;
-  font-weight: lighter !important; }
-
-span.text {
+  font-size: 1.375rem;
+  font-weight: lighter !important;
   color: white; }
 
 .main-navigation a {
@@ -845,11 +847,6 @@ span.text {
 
 #container_header {
   line-height: 2.1875rem; }
-
-.image-banner-container {
-  height: 8em;
-  background-image: url(https://streetsupport.net/assets/img/header-background.png);
-  background-repeat: repeat; }
 
 /*Style for this is currently in index.php:
 
@@ -866,31 +863,29 @@ span.text {
 */
 .page-header {
   background-color: #4e4269;
-  height: 1em; }
+  height: 1em;
+  color: #ffde00; }
 
 .page-title {
   background-color: #4e4269;
   font-weight: 100;
-  color: white;
   margin-top: auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
+.page-title > a {
+  color: #ffde00; }
+
+.page-header > a {
+  color: white !important; }
+
 .container-cat-titles {
-  border-style: solid;
-  border-width: thick;
-  border-color: #ffa200;
-  margin-bottom: 5em;
   padding-left: 1em; }
 
 .container-cat-titles .entry-header {
   margin-bottom: 1em; }
 
 .container-post-excerpt {
-  border-style: solid;
-  border-width: thick;
-  border-color: #ffa200;
-  margin-bottom: 5em;
   padding-left: 1em; }
 
 .container-post-excerpt > h1 {
@@ -981,20 +976,21 @@ a.more-link {
 .nav-previous > a, .nav-next > a {
   color: #00E6A8; }
 
+#primary-menu {
+  line-height: 1.7em; }
+
 #primary-menu > li {
-  padding-right: 30px;
-  padding-bottom: 0.3em;
-  padding-top: 0.3em;
-  padding-left: 30px;
   font-weight: 300;
-  line-height: 1.5;
   color: #48484a !important;
   transition-property: background-color;
   transition-duration: 0.15s;
   transition-timing-function: linear;
   transition-delay: initial; }
 
-.menu > .li > a:hover {
+#primary-menu > li > a {
+  padding: 0.3em 30px; }
+
+#primary-menu > li > a:hover {
   background-color: #f6e9d2; }
 
 .current_page_item {

@@ -7,6 +7,11 @@
   padding-top:0.5em;
 }
 
+.site-header > a {
+padding: 2em 0;
+display: block;
+}
+
 .main-navigation {
   background-color: $brand-j;
   padding-top:0.4em;
@@ -33,13 +38,9 @@ text-align: center !important;
 .header__title {
   display: inline-block;
   vertical-align:top;
-  font-size: 1em;
+  font-size: 1.375rem;
   font-weight:lighter !important;
-}
-
-
-span.text {
-	color: white;
+  color: white;
 }
 
 .main-navigation a {
@@ -52,10 +53,4 @@ span.text {
 
 #container_header {
   line-height: 2.1875rem;
-}
-
-.image-banner-container {
-  height:8em;
-  background-image: url(https://streetsupport.net/assets/img/header-background.png);
-    background-repeat: repeat;
 }
