@@ -35,8 +35,13 @@ img.wp-image-25.alignright {
 	padding-left: 1em;
 }
 
-hr {
-	background-color: orange;
-	height: 0.5em;
-	width: 100%;
+.divider, .divider__line {
+    display: block;
+    width: 100%;
+}
+
+.divider {
+    height: 30px;
+    text-align: center;
+    padding: 40px 0;
 }

@@ -930,10 +930,14 @@ img.wp-image-25.alignright {
   margin-bottom: 2em;
   padding-left: 1em; }
 
-hr {
-  background-color: orange;
-  height: 0.5em;
+.divider, .divider__line {
+  display: block;
   width: 100%; }
+
+.divider {
+  height: 30px;
+  text-align: center;
+  padding: 40px 0; }
 
 .info-container {
   padding-top: 2em; }
