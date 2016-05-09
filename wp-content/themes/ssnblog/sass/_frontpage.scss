@@ -1,3 +1,11 @@
+#latest-news-posts, #latest-stories-posts, #latest-about-homelessness-posts {
+  margin-top: -0.75em;
+}
+
+#latest-news-posts, #latest-stories-posts, #latest-about-homelessness-posts h3 {
+  margin-bottom: -0.75em;
+}
+
 .container-cat-titles {
   padding-left: 1em;
 }
@@ -6,14 +14,12 @@
 margin-bottom:0.5em;
 }
 
-
 .container-post-excerpt {
   padding-left: 1em;
 }
 
 .container-post-excerpt > h3 {
   padding-top: 0.5em;
-
   color: $brand-h;
 }
 
