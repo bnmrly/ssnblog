@@ -888,10 +888,12 @@ h2, h3, p, ul {
   padding-left: 1em; }
 
 .container-post-excerpt > h1 {
-  padding-top: 0.5em; }
+  padding-top: 1em;
+  color: #5a497f; }
 
 .container-cat-titles > h1 {
-  padding-top: 0.5em; }
+  padding-top: 1em;
+  color: #5a497f; }
 
 .cat-excerpt-entry-header {
   margin-left: -1em;
@@ -917,7 +919,7 @@ h2, h3, p, ul {
   margin-bottom: -1.5em; }
 
 .entry-title > a {
-  color: #8d8d8d; }
+  color: #101011; }
 
 article > .entry-header {
   padding-left: 1em; }
