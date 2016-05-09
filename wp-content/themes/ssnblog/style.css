@@ -938,6 +938,12 @@ img.wp-image-25.alignright {
 .nav-previous {
   padding-bottom: 2em; }
 
+.wp-post-image {
+  float: left;
+  padding-top: 0.25em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em; }
+
 .info-container {
   padding-top: 2em; }
 
