@@ -882,16 +882,17 @@ h2, h3, p, ul {
   padding-left: 1em; }
 
 .container-cat-titles .entry-header {
-  margin-bottom: 0.25em; }
+  margin-bottom: 0.5em; }
 
 .container-post-excerpt {
   padding-left: 1em; }
 
 .container-post-excerpt > h3 {
-  padding-top: 0.55em;
+  padding-top: 0.5em;
   color: #5a497f; }
 
 .container-cat-titles > h3 {
+  margin-bottom: -0.5em;
   color: #4e4269; }
 
 .cat-excerpt-entry-header {
@@ -924,7 +925,8 @@ h2, h3, p, ul {
   color: #101011; }
 
 article > .entry-header {
-  padding-left: 1em; }
+  padding-left: 1em;
+  margin-top: -0.75em; }
 
 .edit-link {
   display: none; }
