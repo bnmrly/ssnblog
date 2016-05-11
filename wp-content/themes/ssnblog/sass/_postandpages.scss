@@ -4,13 +4,18 @@
 	padding-top: 0.5em;
 }
 */
-
-.page-title, .entry-content, .entry-meta, .social-share, .nav-previous, .nav-next {
+.entry-content,
+.entry-meta,
+.nav-next,
+.nav-previous,
+.page-title,
+.social-share {
 	padding-left: 1em !important;
 	padding-right: 1em !important;
 }
 
-.site-content, article {
+.site-content,
+article {
 	background-color: white;
 }
 
@@ -19,14 +24,15 @@
 }
 
 .entry-title {
-	margin-top:1.5em;
+	margin-top: 1.5em;
 }
+
 .entry-title > a {
 	color: $brand-m;
 }
 
 article > .entry-header {
-	padding-left:1em;
+	padding-left: 1em;
 }
 
 .edit-link {
@@ -39,12 +45,16 @@ img.wp-image-25.alignright {
 }
 
 .nav-previous {
-padding-bottom: 2em;
+	padding-bottom: 2em;
 }
 
 .wp-post-image {
-float:left;
-padding-top: 0.25em;
-padding-right:0.5em;
-padding-bottom:0.5em;
+	float: left;
+	padding-top: 0.25em;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.size-thumbnail {
+	margin-top: 0.3em;
 }
