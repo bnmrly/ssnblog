@@ -118,7 +118,7 @@ function ssnblog_scripts() {
 
 	wp_enqueue_script( 'ssnblog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-// BM CHANGE Hide the default primary menu when screen size is adjusted.
+// Hides the default primary menu when screen size is adjusted.
 //	wp_enqueue_script( 'ssnblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -153,8 +153,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 add_filter( 'get_the_archive_title', function ($title) {
-
-// BM CHANGE TO REMOVE 'CATEGORY' FROM page-title
 
 		$title = '<a href="' . get_site_url() . '">Home</a> &gt; ';
 

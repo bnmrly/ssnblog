@@ -21,8 +21,6 @@
 		?>
 	</header><!-- .entry-header -->
 
-<!-- BM CHANGE GOT RID OF CONTINUE READING AND REPLACE WITH MORE -->
-
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(

@@ -15,8 +15,6 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
-		<!-- BM CHANGE Remove Wordpress and theme links and replace with .container-footer-->
-
 		<div class="container-footer">
 
 			<h3 class="h3 footer__header">Follow Street Support Network</h3>

@@ -454,13 +454,6 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-/* BM CHANGE Made text-decoration none and it was: a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
-} */
 a {
   text-decoration: none; }
 

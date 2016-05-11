@@ -44,10 +44,6 @@
     <img src="<?php echo get_site_url ();  ?>/wp-content/themes/ssnblog/images/site_icon.svg" id="logo" alt="street support logo">
       <h1 class="h3 header__title">Street Support Blog</h1></a>
 
-
-		<!-- BM CHANGE Added some of the html from header.hbs-->
-
-
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
@@ -67,7 +63,7 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 
 
-<!-- BM CHANGE Remove Primary Menu button
+<!-- Removed Primary Menu button
 
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ssnblog' ); ?></button> -->
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

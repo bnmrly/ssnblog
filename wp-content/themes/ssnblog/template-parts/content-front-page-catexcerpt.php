@@ -16,9 +16,7 @@
 				the_title( '<h4 class="entry-title cat-excerpt-entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 				the_post_thumbnail( 'thumbnail');
 
-// BM CHANGE Removed the_excerpt function
-
-				//BM CHANGE ADDED to get read more working
+// Removed the_excerpt function
 
 				the_content( sprintf(
 				/* translators: %s: Name of current post. */
