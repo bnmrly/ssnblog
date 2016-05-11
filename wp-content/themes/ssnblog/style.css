@@ -98,7 +98,6 @@ strong {
 dfn {
   font-style: italic; }
 
-/* BM CHANGE */
 h1 {
   font-size: 1.25em;
   font-weight: normal;
@@ -243,8 +242,8 @@ h5,
 h6 {
   clear: both; }
 
-dfn,
 cite,
+dfn,
 em,
 i {
   font-style: italic; }
@@ -279,8 +278,8 @@ acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }
 
-mark,
-ins {
+ins,
+mark {
   background: #fff9c0;
   text-decoration: none; }
 
@@ -294,8 +293,8 @@ html {
   box-sizing: border-box; }
 
 *,
-*:before,
-*:after {
+*:after,
+*:before {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit; }
 
@@ -303,10 +302,10 @@ body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */ }
 
-blockquote:before,
 blockquote:after,
-q:before,
-q:after {
+blockquote:before,
+q:after,
+q:before {
   content: ""; }
 
 blockquote,
@@ -319,19 +318,18 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
-ul,
-ol {
-  margin: 0 0 1em 0; }
+ol,
+ul {
+  margin: 0 0 1em; }
 
-/* BM CHANGE  List styles */
 ul {
   list-style: none; }
 
 ol {
   list-style: none; }
 
-li > ul,
-li > ol {
+li > ol,
+li > ul {
   margin-bottom: 0;
   margin-left: 1em; }
 
@@ -367,7 +365,7 @@ input[type="submit"] {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em;
+  padding: 0.6em 1em 0.4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
 
 button:hover,
@@ -377,32 +375,32 @@ input[type="submit"]:hover {
   border-color: #ccc #bbb #aaa;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
 
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
 button:active,
+button:focus,
 input[type="button"]:active,
+input[type="button"]:focus,
 input[type="reset"]:active,
-input[type="submit"]:active {
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
   border-color: #aaa #bbb #bbb;
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
+input[type="color"],
 input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
-input[type="color"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 textarea {
   color: #666;
   border: 1px solid #ccc;
@@ -411,39 +409,39 @@ textarea {
 select {
   border: 1px solid #ccc; }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
+input[type="color"]:focus,
 input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
-input[type="color"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="range"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
 textarea:focus {
   color: #111; }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
+input[type="color"],
 input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
-input[type="color"] {
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
   padding: 3px; }
 
 textarea {
@@ -469,16 +467,16 @@ a {
 a:visited {
   text-decoration: none; }
 
-a:hover,
+a:active,
 a:focus,
-a:active {
+a:hover {
   color: blue; }
 
 a:focus {
   outline: thin dotted; }
 
-a:hover,
-a:active {
+a:active,
+a:hover {
   outline: 0; }
 
 /*--------------------------------------------------------------
@@ -490,7 +488,6 @@ a:active {
   float: left;
   width: 100%; }
 
-/* BM CHANGE I used display: inline-block for everything here to try and get it working */
 .main-navigation ul {
   display: inline-block;
   vertical-align: middle;
@@ -527,17 +524,17 @@ a:active {
 .main-navigation ul ul li {
   display: inline-block; }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul li.focus > ul,
+.main-navigation ul li:hover > ul {
   left: auto; }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li.focus > ul,
+.main-navigation ul ul li:hover > ul {
   left: 100%; }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled ul,
+.menu-toggle {
   display: block; }
 
 @media screen and (min-width: 37.5em) {
@@ -547,20 +544,20 @@ a:active {
     display: inline-block; } }
 
 .site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main .post-navigation,
+.site-main .posts-navigation {
   margin: 0, 0, 1.5em;
   overflow: hidden; }
 
 .comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
+.post-navigation .nav-previous,
+.posts-navigation .nav-previous {
   float: left;
   width: 50%; }
 
 .comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.post-navigation .nav-next,
+.posts-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%; }
@@ -622,28 +619,28 @@ a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-.clear:before,
 .clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
+.clear:before,
 .comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
+.comment-content:before,
+.entry-content:after,
+.entry-content:before,
 .site-content:after,
+.site-content:before,
+.site-footer:after,
 .site-footer:before,
-.site-footer:after {
+.site-header:after,
+.site-header:before {
   content: "";
   display: table;
   table-layout: fixed; }
 
 .clear:after,
-.entry-content:after,
 .comment-content:after,
-.site-header:after,
+.entry-content:after,
 .site-content:after,
-.site-footer:after {
+.site-footer:after,
+.site-header:after {
   clear: both; }
 
 /*--------------------------------------------------------------
@@ -672,13 +669,13 @@ a:active {
 .updated:not(.published) {
   display: none; }
 
-.single .byline,
-.group-blog .byline {
+.group-blog .byline,
+.single .byline {
   display: inline; }
 
-.page-content,
 .entry-content,
-.entry-summary {
+.entry-summary,
+.page-content {
   margin: 1.5em 0 0; }
 
 .page-links {
@@ -688,8 +685,8 @@ a:active {
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
+.archive .format-aside .entry-title,
+.blog .format-aside .entry-title {
   display: none; }
 
 /*--------------------------------------------------------------
@@ -717,9 +714,9 @@ a:active {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-.page-content .wp-smiley,
+.comment-content .wp-smiley,
 .entry-content .wp-smiley,
-.comment-content .wp-smiley {
+.page-content .wp-smiley {
   border: none;
   margin-bottom: 0;
   margin-top: 0;
@@ -799,7 +796,10 @@ body {
 .entry-title > a {
   color: #8d8d8d; }
 
-h2, h3, p, ul {
+h2,
+h3,
+p,
+ul {
   line-height: 1.4; }
 
 #masthead {
@@ -827,9 +827,6 @@ h2, h3, p, ul {
   top: 0.25em;
   margin-top: 0.4em; }
 
-/*
-
-*/
 .header__title {
   display: inline-block;
   vertical-align: top;
@@ -838,28 +835,12 @@ h2, h3, p, ul {
   color: white; }
 
 .main-navigation a {
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.1em;
-  padding-bottom: 0.5em;
+  padding: 0.1em 1em 0.5em;
   color: #48484a; }
 
 #container_header {
   line-height: 2.1875rem; }
 
-/*Style for this is currently in index.php:
-
-<div id="primary" class="content-area">
-  <!-- BM Change add new div for banner image -->
-
-  <div id="container_for_banner"
-      <div id="banner-image">
-        <img src="http://i.huffpost.com/gen/1931212/images/o-HOMELESS-CHILDREN-facebook.jpg" alt="tents-banner" style="width:100%;height:128px;">
-
-      </div> <!-- #banner-image -->
-    </div> <!-- #container_for_banner -->
-
-*/
 .page-header {
   background-color: #5a497f;
   height: 1em;
@@ -875,13 +856,14 @@ h2, h3, p, ul {
 .page-title > a {
   color: #ffde00; }
 
-.page-header > a {
-  color: white !important; }
-
-#latest-news-posts, #latest-stories-posts, #latest-about-homelessness-posts {
+#latest-about-homelessness-posts,
+#latest-news-posts,
+#latest-stories-posts {
   margin-top: -0.75em; }
 
-#latest-news-posts, #latest-stories-posts, #latest-about-homelessness-posts h3 {
+#latest-about-homelessness-posts h3,
+#latest-news-posts,
+#latest-stories-posts {
   margin-bottom: -0.75em; }
 
 .container-cat-titles {
@@ -914,11 +896,17 @@ h2, h3, p, ul {
 	padding-top: 0.5em;
 }
 */
-.page-title, .entry-content, .entry-meta, .social-share, .nav-previous, .nav-next {
+.entry-content,
+.entry-meta,
+.nav-next,
+.nav-previous,
+.page-title,
+.social-share {
   padding-left: 1em !important;
   padding-right: 1em !important; }
 
-.site-content, article {
+.site-content,
+article {
   background-color: white; }
 
 .entry-header {
@@ -949,14 +937,13 @@ img.wp-image-25.alignright {
   padding-right: 0.5em;
   padding-bottom: 0.5em; }
 
+.size-thumbnail {
+  margin-top: 0.3em; }
+
 .info-container {
   padding-top: 2em; }
 
 .entry-meta {
-  padding-top: 1em;
-  padding-left: 0.5em;
-  margin-top: -5em;
-  margin-bottom: 3em;
   float: right !important;
   font-size: 0.75em; }
 
@@ -966,7 +953,8 @@ time.entry-date.published {
 a.url.fn.n {
   color: #0b9b75; }
 
-a.more-link, .cat-links > a {
+.cat-links > a,
+a.more-link {
   color: #0b9b75; }
 
 .entry-content > p > a {
@@ -976,18 +964,19 @@ a.more-link {
   font-size: 0.8em; }
 
 .post-navigation {
-  margin-top: -0.9em;
-  margin-bottom: -0.9em; }
+  margin-top: -0.5em;
+  margin-bottom: 0.5em; }
 
 .main-navigation {
   border-top: 2px solid #f6e9d2;
   border-bottom: 2px solid #f6e9d2;
-  padding-top: 0em; }
+  padding-top: 0; }
 
 .nav-links {
   font-size: 0.8em; }
 
-.nav-previous > a, .nav-next > a {
+.nav-next > a,
+.nav-previous > a {
   color: #0b9b75; }
 
 #primary-menu {
@@ -1010,13 +999,16 @@ a.more-link {
 .current_page_item {
   background-color: white !important; }
 
+.page-title {
+  color: white; }
+
 .divider {
   display: block;
   width: 100%;
   height: 30px;
   text-align: center;
-  padding-top: 1.5em;
-  padding-left: 1em !important;
+  padding-top: 1.5em !important;
+  padding-left: 1em;
   padding-right: 1em !important; }
   .divider__line {
     display: block;
@@ -1038,7 +1030,7 @@ a.more-link {
 
 .container-footer {
   padding-top: 3em;
-  padding-top: 0em;
+  padding-top: 0;
   margin-top: 1em; }
 
 .site-footer {
@@ -1096,7 +1088,8 @@ entry-footer {
   padding: 0;
   display: inline-block; }
 
-.facebook-follow, .twitter-follow {
+.facebook-follow,
+.twitter-follow {
   height: 37px;
   width: 34px;
   vertical-align: middle; }
