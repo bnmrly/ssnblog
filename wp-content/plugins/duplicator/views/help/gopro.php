@@ -31,8 +31,8 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
 <div class="dup-pro-area">
 	<img src="<?php echo DUPLICATOR_PLUGIN_URL ?>assets/img/logo-dpro-300x50-nosnap.png"  /> 
 	<div style="font-size:18px; font-style:italic; color:gray">
-		<?php DUP_Util::_e('The simplicity of Duplicator') ?>
-		<?php DUP_Util::_e('with power for the professional.') ?>
+		<?php _e('The simplicity of Duplicator', 'duplicator') ?>
+		<?php _e('with power for the professional.', 'duplicator') ?>
 	</div>
 
 	<table id="comparison-table">
@@ -141,13 +141,18 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
 			<td class="feature-column"><?php _e('Active Customer Support', 'duplicator') ?></td>
 			<td class="check-column"></td>
 			<td class="check-column"><i class="fa fa-check"></i></td>
-		</tr>				
+		</tr>
+		<tr>
+			<td class="feature-column"><?php _e('Plus Many Other Features...', 'duplicator') ?></td>
+			<td class="check-column"></td>
+			<td class="check-column"><i class="fa fa-check"></i></td>
+		</tr>			
 	</table>
 
 	<br style="clear:both" />
 	<p style="text-align:center">
 		<a href="http://snapcreek.com/duplicator?free-go-pro" target="_blank" class="button button-primary button-large dup-check-it-btn" >
-			<?php DUP_Util::_e('Check It Out!') ?>
+			<?php _e('Check It Out!', 'duplicator') ?>
 		</a>
 	</p>
 	<br/><br/>

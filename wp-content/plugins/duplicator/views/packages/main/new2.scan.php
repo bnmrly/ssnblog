@@ -47,7 +47,7 @@
 	div.dup-scan-title a {display:inline-block; min-width:200px; padding:3px; }
 	div.dup-scan-title a:focus {outline: 1px solid #fff; box-shadow: none}
 	div.dup-scan-title div {display:inline-block;  }
-	div.dup-scan-info {display:none;}
+	div.dup-scan-info {display:none; padding:5px 20px 10px 10px}
 	div.dup-scan-good {display:inline-block; color:green;font-weight: bold;}
 	div.dup-scan-warn {display:inline-block; color:#AF0000;font-weight: bold;}
 	span.dup-toggle {float:left; margin:0 2px 2px 0; }
@@ -56,14 +56,13 @@
 	table#dup-scan-db-details td {padding:0px;}
 	table#dup-scan-db-details td:first-child {font-weight: bold;  white-space: nowrap; width:90px}
 	div#dup-scan-db-info {margin:0px 0px 0px 10px}
-	div#data-db-tablelist {max-height: 300px; overflow-y: scroll}
+	div#data-db-tablelist {max-height: 300px; overflow-y: scroll; border: 1px dashed silver; padding: 5px; margin-top:5px}
 	div#data-db-tablelist div{padding:0px 0px 0px 15px;}
 	div#data-db-tablelist span{display:inline-block; min-width: 75px}
 	div#data-db-size1 {display: inline-block; float:right; font-size:11px; margin-right: 15px; font-style: italic}
 	/*FILES */
 	div#data-arc-size1 {display: inline-block; float:right; font-size:11px; margin-right: 15px; font-style: italic}
-	div#data-arc-names-data, div#data-arc-big-data
-		{word-wrap: break-word;font-size:10px; border:1px dashed silver; padding:5px; display: none}
+	div#data-arc-names-data, div#data-arc-big-data	{word-wrap: break-word;font-size:10px; border:1px dashed silver; padding:5px; display: none}
 		
 	div#dup-scan-warning-continue {display:none; text-align: center; padding: 0 0 15px 0}
 	div#dup-scan-warning-continue div.msg1 label{font-size:16px; color:maroon}
@@ -375,18 +374,30 @@ TOOL BAR: STEPS -->
 				<div>
 					<div class='dup-scan-title'>
 						<a><?php _e('Total Size', 'duplicator');?></a>
-						<div id="data-db-status-size1"></div>
+						<div id="data-db-status-size"></div>
 					</div>
 					<div class='dup-scan-info  dup-info-box'>
+						<b><?php _e('Size', 'duplicator');?>:</b> <span id="data-db-size2"></span> &nbsp; | &nbsp;
 						<b><?php _e('Tables', 'duplicator');?>:</b> <span id="data-db-tablecount"></span> &nbsp; | &nbsp;
-						<b><?php _e('Records', 'duplicator');?>:</b> <span id="data-db-rows"></span> &nbsp; | &nbsp;
-						<b><?php _e('Size', 'duplicator');?>:</b> <span id="data-db-size2"></span> <br/><br/>
+						<b><?php _e('Records', 'duplicator');?>:</b> <span id="data-db-rows"></span> 
+						 <br/><br/>
 						<?php 
-							$lnk = '<a href="maint/repair.php" target="_blank">' . __('repair and optimization', 'duplicator') . '</a>';
-							printf(__('Total size and row count for all database tables are approximate values.  The thresholds that trigger warnings are %1$s and %2$s records.  Large databases take time to process and can cause issues with server timeout and memory settings.  Running a %3$s on your database can also help improve the overall size and performance.  If your server supports shell_exec and mysqldump you can try to enable this option from the settings menu.', 'duplicator'), 
-									DUP_Util::ByteSize(DUPLICATOR_SCAN_DBSIZE), 
-									number_format(DUPLICATOR_SCAN_DBROWS),
-									$lnk);
+							//OVERVIEW
+							echo '<b>' . __('Overview:', 'duplicator') . '</b><br/>';
+							printf(__('Total size and row count for all database tables are approximate values.  The thresholds that trigger warnings are %1$s OR %2$s records total for the entire database.  The larger the databases the more time it takes to process and execute.  This can cause issues with budget hosts that have cpu/memory limits, and timeout constraints.', 'duplicator'), 
+									DUP_Util::ByteSize(DUPLICATOR_SCAN_DB_ALL_SIZE), 
+									number_format(DUPLICATOR_SCAN_DB_ALL_ROWS));
+							
+							//OPTIONS
+							echo '<br/><br/>';
+							echo '<b>' . __('Options:', 'duplicator') . '</b><br/>';
+							$lnk = '<a href="maint/repair.php" target="_blank">' . __('Repair and Optimization', 'duplicator') . '</a>';
+							printf(__('1. Running a %1$s on your database will help to improve the overall size, performance and efficiency of the database.', 'duplicator'), $lnk);
+							echo '<br/><br/>';
+							$lnk = '<a href="?page=duplicator-settings" target="_blank">' . __('Duplicator Settings', 'duplicator') . '</a>';
+							printf(__('2. If your server supports shell_exec and mysqldump it is recommended to enable this option from the %1$s menu.', 'duplicator'), $lnk);
+							echo '<br/><br/>';
+							_e('3. Consider removing data from tables that store logging, statistical  or other non-critical information about your site.', 'duplicator');
 						?>
 					</div>
 				</div>
@@ -396,9 +407,34 @@ TOOL BAR: STEPS -->
 				<div>
 					<div class='dup-scan-title'>
 						<a><?php _e('Table Details', 'duplicator');?></a>
-						<div id="data-db-status-size2"></div>
+						<div id="data-db-status-details"></div>
 					</div>
 					<div class='dup-scan-info dup-info-box'>
+
+						<?php 
+							//OVERVIEW
+							echo '<b>' . __('Overview:', 'duplicator') . '</b><br/>';
+							printf(__('The thresholds that trigger warnings for individual tables are %1$s OR %2$s records OR tables names with upper-case characters.  The larger the table the more time it takes to process and execute.  This can cause issues with budget hosts that have cpu/memory limits, and timeout constraints.', 'duplicator'), 
+									DUP_Util::ByteSize(DUPLICATOR_SCAN_DB_TBL_SIZE), 
+									number_format(DUPLICATOR_SCAN_DB_TBL_ROWS));
+							
+							//OPTIONS
+							echo '<br/><br/>';
+							echo '<b>' . __('Options:', 'duplicator') . '</b><br/>';
+							$lnk = '<a href="maint/repair.php" target="_blank">' . __('Repair and Optimization', 'duplicator') . '</a>';
+							printf(__('1. Run a %1$s on the table to improve the overall size and performance.', 'duplicator'), $lnk);
+							echo '<br/><br/>';
+							_e('2. Remove stale date from tables such as logging, statistical or other non-critical data.', 'duplicator');
+							echo '<br/><br/>';
+							$lnk = '<a href="http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_lower_case_table_names" target="_blank">' . __('lower_case_table_names', 'duplicator') . '</a>';
+							printf(__('3. For table name case sensitivity issues either rename the table with lower case characters or be pre-paired to work with the %1$s system variable setting.', 'duplicator'), $lnk);
+							echo '<br/><br/>';
+							
+							echo '<b>' . __('Tables:', 'duplicator') . '</b><br/>';
+						?>
+						
+						
+						
 						<div id="dup-scan-db-info">
 							<div id="data-db-tablelist"></div>
 						</div>
@@ -465,8 +501,6 @@ TOOL BAR: STEPS -->
 	<input type="button" value="&#9668; <?php _e("Back", 'duplicator') ?>" onclick="window.location.assign('?page=duplicator&tab=new1')" class="button button-large" />
 	<input type="button" value="<?php _e("Rescan", 'duplicator') ?>" onclick="Duplicator.Pack.Rescan()" class="button button-large" />
 	<input type="submit" value="<?php _e("Build", 'duplicator') ?> &#9658" class="button button-primary button-large" id="dup-build-button" />
-	<!-- Used for iMacros testing do not remove -->
-	<div id="dup-automation-imacros"></div>
 </div>
 </form>
 
@@ -558,9 +592,17 @@ jQuery(document).ready(function($) {
 		//****************
 		//DATABASE
 		var html = "";
-		if (data.DB.Status.Success) {
-			$('#data-db-status-size1').html(Duplicator.Pack.LoadScanStatus(data.DB.Status.Size));
-			$('#data-db-status-size2').html(Duplicator.Pack.LoadScanStatus(data.DB.Status.Size));
+		var DB_TotalSize = 'Good';
+		var DB_TableDetails = 'Good';
+		var DB_TableRowMax  = <?php echo DUPLICATOR_SCAN_DB_TBL_ROWS; ?>;
+		var DB_TableSizeMax = <?php echo DUPLICATOR_SCAN_DB_TBL_SIZE; ?>;
+		if (data.DB.Status.Success) 
+		{
+			DB_TotalSize = data.DB.Status.DB_Rows == 'Warn' || data.DB.Status.DB_Size == 'Warn' ? 'Warn' : 'Good';
+			DB_TableDetails = data.DB.Status.TBL_Rows == 'Warn' || data.DB.Status.TBL_Size == 'Warn' || data.DB.Status.TBL_Case == 'Warn' ? 'Warn' : 'Good';
+			
+			$('#data-db-status-size').html(Duplicator.Pack.LoadScanStatus(DB_TotalSize));
+			$('#data-db-status-details').html(Duplicator.Pack.LoadScanStatus(DB_TableDetails));
 			$('#data-db-size1').text(data.DB.Size || errMsg);
 			$('#data-db-size2').text(data.DB.Size || errMsg);
 			$('#data-db-rows').text(data.DB.Rows || errMsg);
@@ -571,7 +613,11 @@ jQuery(document).ready(function($) {
 			} else {
 				$.each(data.DB.TableList, function(i) {
 					html += '<b>' + i  + '</b><br/>';
-					$.each(data.DB.TableList[i], function(key,val) {html += '<div><span>' + key  + ':</span>' + val + '</div>'; })
+					$.each(data.DB.TableList[i], function(key,val) {
+						html += (key == 'Case' && val == 1) || (key == 'Rows' && val > DB_TableRowMax) || (key == 'Size' && parseInt(val) > DB_TableSizeMax)
+								? '<div style="color:red"><span>' + key  + ':</span>' + val + '</div>'
+								: '<div><span>' + key  + ':</span>' + val + '</div>'; 
+					});
 				});					
 			}
 			$('#data-db-tablelist').append(html);

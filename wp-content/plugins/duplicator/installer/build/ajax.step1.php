@@ -40,29 +40,48 @@ error_reporting(E_ERROR);
 //===============================
 //DATABASE TEST CONNECTION
 //===============================
-if (isset($_GET['dbtest'])) {
-
+if (isset($_GET['dbtest'])) 
+{
 	$html     = "";
 	$baseport =  parse_url($_POST['dbhost'], PHP_URL_PORT);
 	$dbConn   = DupUtil::db_connect($_POST['dbhost'], $_POST['dbuser'], $_POST['dbpass'], null, $_POST['dbport']);
 	$dbErr	  = mysqli_connect_error();
+
 	$dbFound  = mysqli_select_db($dbConn, $_POST['dbname']);
 	$port_view = (is_int($baseport) || substr($_POST['dbhost'], -1) == ":") ? "Port=[Set in Host]" : "Port={$_POST['dbport']}";
 
 	$tstSrv   = ($dbConn)  ? "<div class='dup-pass'>Success</div>" : "<div class='dup-fail'>Fail</div>";
 	$tstDB    = ($dbFound) ? "<div class='dup-pass'>Success</div>" : "<div class='dup-fail'>Fail</div>";
 	$html	 .= "<div class='dup-db-test'>";
-	$html	 .= "<small style='display:block; padding:5px'>Using Connection String:<br/>Host={$_POST['dbhost']}; Database={$_POST['dbname']}; Uid={$_POST['dbuser']}; Pwd={$_POST['dbpass']}; {$port_view}</small>";
+	$html	 .= "<small style='display:block; padding:0 5px'>Using Connection String:<br/>Host={$_POST['dbhost']}; Database={$_POST['dbname']}; Uid={$_POST['dbuser']}; Pwd={$_POST['dbpass']}; {$port_view}</small>";
 	$html	 .= "<label>Server Connected:</label> {$tstSrv} <br/>";
 	$html	 .= "<label>Database Found:</label>   {$tstDB} <br/>";
 
-
+	//WARNING: DB not empty message
 	if ($_POST['dbaction'] == 'create'){
 		$tblcount = DupUtil::dbtable_count($dbConn, $_POST['dbname']);
 		$html .= ($tblcount > 0)
-		? "<div class='dup-fail'><b>WARNING</b></div><br/>" . sprintf(ERR_DBEMPTY, $_POST['dbname'], $tblcount)
+		? "<div class='dup-fail'><b>WARNING</b></div><br/>" . sprintf(ERR_DBEMPTY, $_POST['dbname'], $tblcount) . '<br/>'
 		: "";
 	}
+	
+	//WARNNG: Input has utf8
+	$dbConnItems = array($_POST['dbhost'], $_POST['dbuser'], $_POST['dbname'],$_POST['dbpass']);
+	$dbUTF8_tst  = false;
+	foreach ($dbConnItems as $value)
+	{
+		if (DupUtil::is_non_ascii($value)) {
+			$dbUTF8_tst = true;
+			break;
+		}
+	}
+	
+	if (! $dbConn && $dbUTF8_tst) 
+	{
+		$html .=  "<div class='dup-fail'><b>WARNING</b></div><br/>UTF8 Characters were detected as part of the database connection string. If your connection fails be sure  to update "
+			  .   "the MySQL my.ini configuration file setting to support UTF8 characters by enabling this option 'character_set_server=utf8' and restarting the database server.";
+	}
+	
 	$html .= "</div>";
 	die($html);
 }
@@ -227,9 +246,14 @@ if (! $_POST['cache_path']) {
 
 if (! is_writable("{$root_path}/wp-config.php") ) 
 {
-	chmod("{$root_path}/wp-config.php", 0644)
-		? DUPX_Log::Info('File Permission Update: wp-config.php set to 0644')
-		: DUPX_Log::Error('Unable to update file permissions and write to wp-config.php.  Please visit the online FAQ for setting file permissions and work with your hosting provider or server administrator to enable this installer.php script to write to the wp-config.php file.');
+	if (file_exists("{$root_path}/wp-config.php")) 
+	{
+		chmod("{$root_path}/wp-config.php", 0644)
+			? DUPX_Log::Info('File Permission Update: wp-config.php set to 0644')
+			: DUPX_Log::Info('WARNING: Unable to update file permissions and write to wp-config.php.  Please visit the online FAQ for setting file permissions and work with your hosting provider or server administrator to enable this installer.php script to write to the wp-config.php file.');
+	} else {
+		DUPX_Log::Info('WARNING: Unable to locate wp-config.php file.  Be sure the file is present in your archive.');
+	}
 }
 
 

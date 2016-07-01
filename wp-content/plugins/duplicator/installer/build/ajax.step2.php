@@ -97,9 +97,11 @@ $path_new_json = str_replace('"', "", json_encode($_POST['path_new']));
 
 array_push($GLOBALS['REPLACE_LIST'], 
 		array('search' => $_POST['url_old'],  'replace' => $_POST['url_new']), 
-		array('search' => $url_old_json,	  'replace' => $url_new_json), 
 		array('search' => $_POST['path_old'], 'replace' => $_POST['path_new']), 
-		array('search' => $path_old_json,	  'replace' => $path_new_json), 		
+		array('search' => $url_old_json,	  'replace' => $url_new_json), 
+		array('search' => $path_old_json,	  'replace' => $path_new_json), 	
+		array('search' => urlencode($_POST['path_old']), 'replace' => urlencode($_POST['path_new'])), 
+		array('search' => urlencode($_POST['url_old']),  'replace' => urlencode($_POST['url_new'])),
 		array('search' => rtrim(DupUtil::unset_safe_path($_POST['path_old']), '\\'), 'replace' => rtrim($_POST['path_new'], '/'))
 );
 
@@ -205,8 +207,8 @@ $patterns = array("/('|\")WP_HOME.*?\)\s*;/",
 				  "/('|\")PATH_CURRENT_SITE.*?\)\s*;/");						
 $replace  = array("'WP_HOME', '{$_POST['url_new']}');",
 				  "'WP_SITEURL', '{$_POST['url_new']}');",
-				  "'DOMAIN_CURRENT_SITE', {$mu_newDomainHost}');",
-				  "'PATH_CURRENT_SITE', {$mu_newUrlPath}');");
+				  "'DOMAIN_CURRENT_SITE', '{$mu_newDomainHost}');",
+				  "'PATH_CURRENT_SITE', '{$mu_newUrlPath}');");
 $config_file = @file_get_contents('wp-config.php', true);
 $config_file = preg_replace($patterns, $replace, $config_file);
 file_put_contents('wp-config.php', $config_file);

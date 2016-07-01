@@ -17,22 +17,23 @@
 		}   
 	}
 	
-	$txt_found = DUP_Util::__("File Found");
-	$txt_not_found = DUP_Util::__("File Removed");
+	
+	$txt_found = __('File Found', 'duplicator');
+	$txt_not_found = __('File Removed', 'duplicator');
 	$installer_files = DUP_Server::GetInstallerFiles();
         
 	switch ($_GET['action']) {            
 		case 'installer' :     
-			$action_response = __('Installer file cleanup ran!');
+			$action_response = __('Installer file cleanup ran!', 'duplicator');
 			$css_hide_msg = 'div.error {display:none}';		
 			break;		
 		case 'legacy': 
 			DUP_Settings::LegacyClean();			
-			$action_response = __('Legacy data removed.');
+			$action_response = __('Legacy data removed.', 'duplicator');
 			break;
 		case 'tmp-cache': 
 			DUP_Package::TmpCleanup(true);
-			$action_response = __('Build cache removed.');
+			$action_response = __('Build cache removed.', 'duplicator');
 			break;		
 	} 
 
@@ -70,25 +71,33 @@
 					//No way to know exact name of archive file except from installer.
 					//The only place where the package can be remove is from installer
 					//So just show a message if removing from plugin.
-					if (! empty($package_name) ){
+					if (! empty($package_name) )
+					{
 						$path_parts = pathinfo($package_name);
 						$path_parts = (isset($path_parts['extension'])) ? $path_parts['extension'] : '';
-						if ($path_parts  == "zip"  && ! is_dir($package_name)) {
+						if ($path_parts  == "zip"  && ! is_dir($package_name)) 
+						{
+							$lang1 = __('Successfully removed', 'duplicator');
+							$lang2 = __('Does not exist or unable to remove archive file.', 'duplicator');
 							$html .= (@unlink($package_name))   
-								?  "<div class='success'>Successfully removed {$package_name}</div>"   
-								:  "<div class='failed'>Does not exist or unable to remove archive file.</div>";
-						} else {
-							$html .= "<div class='failed'>Does not exist or unable to remove archive file.  Please validate that an archive file exists.</div>";
+								?  "<div class='success'>{$lang1} {$package_name}</div>"   
+								:  "<div class='failed'>{$lang2}</div>";
+						} 
+						else 
+						{
+							$lang = __('Does not exist or unable to remove archive file.  Please validate that an archive file exists.', 'duplicator');
+							$html .= "<div class='failed'>{$lang}</div>";
 						}
 					} else {
-						$html .= '<br/><div>It is recommended to remove your archive file from the root of your WordPress install.  This will need to be done manually.</div>';
+						$lang = __('It is recommended to remove your archive file from the root of your WordPress install.  This will need to be done manually', 'duplicator');
+						$html .= "<br/><div>{$lang}</div>";
 					}
 					echo $html;
 				 ?>
 
 				<i><br/>
-				 <?php DUP_Util::_e('If the installer files did not successfully get removed, then you WILL need to remove them manually')?>. <br/>
-				 <?php DUP_Util::_e('Please remove all installer files to avoid leaving open security issues on your server')?>. <br/><br/>
+				 <?php _e('If the installer files did not successfully get removed, then you WILL need to remove them manually', 'duplicator')?>. <br/>
+				 <?php _e('Please remove all installer files to avoid leaving open security issues on your server', 'duplicator')?>. <br/><br/>
 				</i>
 			
 			<?php endif; ?>
@@ -96,23 +105,23 @@
 	<?php endif; ?>	
 	
 
-	<h2><?php DUP_Util::_e('Data Cleanup')?><hr size="1"/></h2>
+	<h2><?php _e('Data Cleanup', 'duplicator')?><hr size="1"/></h2>
 	<table class="dup-reset-opts">
 		<tr style="vertical-align:text-top">
 			<td>
 				<a class="button button-small dup-fixed-btn" href="?page=duplicator-tools&tab=cleanup&action=installer&_wpnonce=<?php echo $nonce; ?>">
-					<?php DUP_Util::_e("Delete Reserved Files"); ?>
+					<?php _e("Delete Reserved Files", 'duplicator'); ?>
 				</a>
 			</td>
 			<td>
-				<?php DUP_Util::_e("Removes all reserved installer files."); ?>
-				<a href="javascript:void(0)" onclick="jQuery('#dup-tools-delete-moreinfo').toggle()">[<?php DUP_Util::_e("more info"); ?>]</a>
+				<?php _e("Removes all reserved installer files.", 'duplicator'); ?>
+				<a href="javascript:void(0)" onclick="jQuery('#dup-tools-delete-moreinfo').toggle()">[<?php _e("more info", 'duplicator'); ?>]</a>
 				<br/>
 				<div id="dup-tools-delete-moreinfo">
 					<?php
-						DUP_Util::_e("Clicking on the 'Delete Reserved Files' button will remove the following reserved files.  These files are typically from a previous Duplicator install. "
+							_e("Clicking on the 'Delete Reserved Files' button will remove the following reserved files.  These files are typically from a previous Duplicator install. "
 								. "If you are unsure of the source, please validate the files.  These files should never be left on production systems for security reasons.  "
-								. "Below is a list of all the reserved files used by Duplicator.  Please be sure these are removed from your server.");
+								. "Below is a list of all the reserved files used by Duplicator.  Please be sure these are removed from your server.", 'duplicator');
 						echo "<br/><br/>";
 						
 						foreach($installer_files as $file => $path) 
@@ -126,12 +135,12 @@
 			</td>
 		</tr>
 		<tr>
-			<td><a class="button button-small dup-fixed-btn" href="javascript:void(0)" onclick="Duplicator.Tools.DeleteLegacy()"><?php DUP_Util::_e("Delete Legacy Data"); ?></a></td>
-			<td><?php DUP_Util::_e("Removes all legacy data and settings prior to version"); ?> [<?php echo DUPLICATOR_VERSION ?>].</td>
+			<td><a class="button button-small dup-fixed-btn" href="javascript:void(0)" onclick="Duplicator.Tools.DeleteLegacy()"><?php _e("Delete Legacy Data", 'duplicator'); ?></a></td>
+			<td><?php _e("Removes all legacy data and settings prior to version", 'duplicator'); ?> [<?php echo DUPLICATOR_VERSION ?>].</td>
 		</tr>
 		<tr>
-			<td><a class="button button-small dup-fixed-btn" href="javascript:void(0)" onclick="Duplicator.Tools.ClearBuildCache()"><?php DUP_Util::_e("Clear Build Cache"); ?></a></td>
-			<td><?php DUP_Util::_e("Removes all build data from:"); ?> [<?php echo DUPLICATOR_SSDIR_PATH_TMP ?>].</td>
+			<td><a class="button button-small dup-fixed-btn" href="javascript:void(0)" onclick="Duplicator.Tools.ClearBuildCache()"><?php _e("Clear Build Cache", 'duplicator'); ?></a></td>
+			<td><?php _e("Removes all build data from:", 'duplicator'); ?> [<?php echo DUPLICATOR_SSDIR_PATH_TMP ?>].</td>
 		</tr>	
 	</table>
 </form>
@@ -140,11 +149,11 @@
 jQuery(document).ready(function($) {
    Duplicator.Tools.DeleteLegacy = function () {
 	   <?php
-		   $msg  = __('This action will remove all legacy settings prior to version %1$s.  ');
-		   $msg .= __('Legacy settings are only needed if you plan to migrate back to an older version of this plugin.'); 
+		   $msg  = __('This action will remove all legacy settings prior to version %1$s.  ', 'duplicator');
+		   $msg .= __('Legacy settings are only needed if you plan to migrate back to an older version of this plugin.', 'duplicator'); 
 	   ?>
 	   var result = true;
-	   var result = confirm('<?php printf(__($msg), DUPLICATOR_VERSION) ?>');
+	   var result = confirm('<?php printf(__($msg, 'duplicator'), DUPLICATOR_VERSION) ?>');
 	   if (! result) 
 		   return;
 		
@@ -153,7 +162,7 @@ jQuery(document).ready(function($) {
    
    Duplicator.Tools.ClearBuildCache = function () {
 	   <?php
-		   $msg  = __('This process will remove all build cache files.  Be sure no packages are currently building or else they will be cancelled.');
+		   $msg  = __('This process will remove all build cache files.  Be sure no packages are currently building or else they will be cancelled.', 'duplicator');
 	   ?>
 	   var result = true;
 	   var result = confirm('<?php echo $msg ?>');

@@ -123,15 +123,10 @@ class DUP_Package {
 		$report['ARC']['Dirs']				= $this->Archive->Dirs;
 		$report['ARC']['Files']				= $this->Archive->Files;
 
-		
 		//DATABASE
 		$db = $this->Database->Stats();
-		$report['DB']['Status']		= $db['Status'];
-		$report['DB']['Size']		= DUP_Util::ByteSize($db['Size'])	or "unknown";
-		$report['DB']['Rows']		= number_format($db['Rows'])		or "unknown";
-		$report['DB']['TableCount']	= $db['TableCount']					or "unknown";
-		$report['DB']['TableList']	= $db['TableList']					or "unknown";
-		
+		$report['DB'] = $db;
+
 		$warnings = array($report['SRV']['WEB']['ALL'],  
 						  $report['SRV']['PHP']['ALL'], 
 						  $report['SRV']['WP']['ALL'], 
@@ -139,7 +134,8 @@ class DUP_Package {
 						  $report['ARC']['Status']['Names'], 
 						  $report['ARC']['Status']['Big'], 
 						  $db['Status']['Size'],
-						  $db['Status']['Rows']);
+						  $db['Status']['Rows'],
+						  $db['Status']['Case']);
 		
 		$warn_counts = array_count_values($warnings);	
 
@@ -301,9 +297,7 @@ class DUP_Package {
 			$this->VersionPHP   = phpversion();
 			$this->VersionDB	= $dbversion;
 			$this->Name			= $name;
-			$this->Hash			= $this->MakeHash();// $post['package-hash'];
-			//RSR
-			//$this->Hash			= $post['package-hash'];
+			$this->Hash			= $this->MakeHash();
 			$this->NameHash		= "{$this->Name}_{$this->Hash}";;
 			$this->Notes		= esc_html($post['package-notes']);
 			//ARCHIVE

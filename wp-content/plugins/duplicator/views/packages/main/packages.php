@@ -78,15 +78,15 @@ TOOL-BAR -->
 				<div id='dup-list-alert-nodata'>
 					<i class="fa fa-archive"></i> 
 					<?php _e("No Packages Found.", 'duplicator'); ?><br/>
-					<?php _e("Click the 'Create New' button to build a package.", 'duplicator'); ?> <br/><br/>
-					<i>
+					<?php _e("Click the 'Create New' button to build a package.", 'duplicator'); ?> 
+						<!--div style='font-style: italic'>
 						<?php
-							printf("%s <a href='admin.php?page=duplicator-help'>%s</a> %s",
-								__("Please visit the", 'duplicator'), 
-								__("help page", 'duplicator'),
-								__("for additional support", 'duplicator'));
+							/*printf("%s <a target='_blank' href='//www.bluehost.com/track/snapcreek/?page=wordpress'>%s</a> %s",
+								__("Duplicator recommends ", 'duplicator'), 
+								__("Bluehost", 'duplicator'),
+								__("for a more optimized experience!", 'duplicator'));*/
 						?>
-					</i>
+						</div-->
 					<div style="height:75px">&nbsp;</div>
 				</div>
 				</td>
@@ -150,7 +150,7 @@ TOOL-BAR -->
 						<button id="<?php echo "{$uniqueid}_archive.zip" ?>" class="button no-select" onclick="Duplicator.Pack.DownloadFile('<?php echo $packagepath; ?>', this); return false;">
 							<i class="fa fa-file-archive-o"></i> <?php _e("Archive", 'duplicator') ?>
 						</button>
-						<button type="button" class="button no-select" title="<?php DUP_Util::_e("Package Details") ?>" onclick="Duplicator.Pack.OpenPackageDetails(<?php echo "{$row['id']}"; ?>);">
+						<button type="button" class="button no-select" title="<?php _e("Package Details", 'duplicator') ?>" onclick="Duplicator.Pack.OpenPackageDetails(<?php echo "{$row['id']}"; ?>);">
 							<i class="fa fa-archive" ></i> 
 						</button>
 					</td>
@@ -179,7 +179,7 @@ TOOL-BAR -->
 							<i class="fa fa-exclamation-triangle"></i>
 							<a href="<?php echo $error_url; ?>"><?php _e("Error Processing", 'duplicator') ?></a>
 						</span>			
-						<a class="button no-select" title="<?php DUP_Util::_e("Package Details") ?>" href="<?php echo $error_url; ?>">
+						<a class="button no-select" title="<?php _e("Package Details", 'duplicator') ?>" href="<?php echo $error_url; ?>">
 							<i class="fa fa-archive"></i> 
 						</a>						
 					</td>
@@ -192,7 +192,19 @@ TOOL-BAR -->
 	?>
 	<tfoot>
 		<tr>
-			<th colspan="8" style='text-align:right; font-size:12px'>						
+			<th colspan="4">
+				<i style="font-size:12px; cursor: pointer" 
+				   data-tooltip-title="<?php _e("Host Recommendation:", 'duplicator'); ?>" 
+				   data-tooltip="<?php _e('Duplicator recommends going with the high performance pro plan or better from Bluehost.com', 'duplicator'); ?>">
+				<i class="fa fa-lightbulb-o"></i>		
+					<?php
+						printf("%s <a target='_blank' href='//www.bluehost.com/track/snapcreek/?page=wordpress'>%s</a>",
+						__("Duplicator Recommends ", 'duplicator'), 
+						__("Bluehost", 'duplicator'));
+					?>
+				</i>
+			</th>
+			<th colspan="7" style='text-align:right; font-size:12px'>						
 				<?php echo _e("Packages", 'duplicator') . ': ' . $totalElements; ?> |
 				<?php echo _e("Total Size", 'duplicator') . ': ' . DUP_Util::ByteSize($totalSize); ?> 
 			</th>

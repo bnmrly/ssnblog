@@ -140,10 +140,10 @@ VIEW: STEP 2- INPUT -->
 	<input type="hidden" name="dbcharset" 	 value="<?php echo $_POST['dbcharset'] ?>" />
 	<input type="hidden" name="dbcollate" 	 value="<?php echo $_POST['dbcollate'] ?>" />
 	
-	
 	<div class="dup-logfile-link"><a href="installer-log.txt" target="_blank">installer-log.txt</a></div>
-	<h3>Step 2: Files &amp; Database</h3>
-	<hr size="1" /><br />
+	<div class="hdr-main">
+		Step 2: Update Files &amp; Database
+	</div><br />
 
 	<div class="title-header">Old Settings</div>
 	<table class="table-inputs-step2">
@@ -180,30 +180,31 @@ VIEW: STEP 2- INPUT -->
 			<td>Title</td>
 			<td><input type="text" name="blogname" id="blogname" value="<?php echo $GLOBALS['FW_BLOGNAME'] ?>" /></td>
 		</tr>
-	</table><br/>
-	
-	<!-- ==========================
-    CREATE NEW USER -->
-	<a href="javascript:void(0)" onclick="$('#dup-step2-user-opts').toggle(0)"><b>New Admin Account...</b></a>
-	<div id='dup-step2-user-opts' style="display:none;">
-	<table class="table-inputs-step2" style="margin-top:7px">
-		<tr><td colspan="2"><i style="color:gray;font-size: 11px">This feature is optional.  If the username already exists the account will NOT be created or updated.</i></td></tr>
-		<tr>
-			<td>Username </td>
-			<td><input type="text" name="wp_username" id="wp_username" value="" title="4 characters minimum" placeholder="(4 or more characters)" /></td>
-		</tr>	
-		<tr>
-			<td valign="top">Password</td>
-			<td><input type="text" name="wp_password" id="wp_password" value="" title="6 characters minimum"  placeholder="(6 or more characters)" /></td>
-		</tr>
 	</table>
-	</div><br/><br/>
-	
-	
+	<br/><br/>
+		
 	<!-- ==========================
     ADVANCED OPTIONS -->
 	<a href="javascript:void(0)" onclick="$('#dup-step2-adv-opts').toggle(0)"><b>Advanced Options...</b></a>
 	<div id='dup-step2-adv-opts' style="display:none;">
+		
+		<br/>
+		<div class="hdr-sub">Add New Admin Account</div>
+		<table class="table-inputs-step2" style="margin-top:7px">
+			<tr><td colspan="2"><i style="color:gray;font-size: 11px">This feature is optional.  If the username already exists the account will NOT be created or updated.</i></td></tr>
+			<tr>
+				<td>Username </td>
+				<td><input type="text" name="wp_username" id="wp_username" value="" title="4 characters minimum" placeholder="(4 or more characters)" /></td>
+			</tr>	
+			<tr>
+				<td valign="top">Password</td>
+				<td><input type="text" name="wp_password" id="wp_password" value="" title="6 characters minimum"  placeholder="(6 or more characters)" /></td>
+			</tr>
+		</table>
+		<br/><br/>
+		
+		
+		<div class="hdr-sub">Scan Options</div>
 		<table style="width: 100%;">
 			<tr>
 				<td valign="top" style="width:80px">Site URL</td>
@@ -213,8 +214,6 @@ VIEW: STEP 2- INPUT -->
 				</td>
 			</tr>
 		</table><br/>
-		
-
 		<table>
 			<tr>
 				<td style="padding-right:10px">
@@ -272,8 +271,9 @@ VIEW: STEP 2 - AJAX RESULT  -->
 	<input type="hidden" name="json"    id="ajax-json" />	
 	
 	<div class="dup-logfile-link"><a href="installer-log.txt" target="_blank">installer-log.txt</a></div>
-	<h3>Step 2: Update Table Data</h3>
-	<hr size="1" />
+	<div class="hdr-main">
+		Step 2: Update Files &amp; Database
+	</div><br />
 	
 	<!--  PROGRESS BAR -->
 	<div id="progress-area">
